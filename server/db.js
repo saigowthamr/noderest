@@ -3,7 +3,7 @@ var Todo = require('./server')
 
 var express = require('express')
 var bodyParser = require('body-parser');
-
+var cors = require('cors');
 
 var app = express();
 
@@ -11,7 +11,7 @@ var app = express();
 const port = process.env.PORT || 3000
 app.use(bodyParser.json())
 
-
+app.use(cors());
 app.post('/todos',(req,res)=>{
 
      var todo = Todo({
